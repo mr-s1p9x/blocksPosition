@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: 100px 100px;
+            gap: 10px;
+            justify-content: center; /* Центрируем блоки по горизонтали */
+            align-items: center; /* Центрируем блоки по вертикали */
+        }
+
+        .block {
+            width: 100px;
+            height: 100px;
+        }
+
+        #block1 { background-color: green; }
+        #block2 { background-color: yellow; }
+        #block3 { background-color: red; }
+        #block4 { background-color: gray; grid-column: 2; } /* Центрируем серый блок под желтым */
+    </style>
+    <title>Задание 1</title>
+</head>
+<body>
+    <div class="container">
+        <div id="block1" class="block"></div>
+        <div id="block2" class="block"></div>
+        <div id="block3" class="block"></div>
+        <div id="block4" class="block"></div>
+    </div>
+
+    <script>
+        const block1 = document.getElementById('block1');
+        const block2 = document.getElementById('block2');
+        const block3 = document.getElementById('block3');
+        const block4 = document.getElementById('block4');
+
+        block1.addEventListener('mouseover', () => {
+            block4.style.backgroundColor = 'green';
+        });
+
+        block2.addEventListener('mouseover', () => {
+            block4.style.backgroundColor = 'yellow';
+        });
+
+        block3.addEventListener('mouseover', () => {
+            block4.style.backgroundColor = 'red';
+        });
+
+        block1.addEventListener('mouseout', () => {
+            block4.style.backgroundColor = 'gray';
+        });
+
+        block2.addEventListener('mouseout', () => {
+            block4.style.backgroundColor = 'gray';
+        });
+
+        block3.addEventListener('mouseout', () => {
+            block4.style.backgroundColor = 'gray';
+        });
+    </script>
+</body>
+</html>

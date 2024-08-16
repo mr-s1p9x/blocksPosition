@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #movingBlock {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+    <title>Задание 2</title>
+</head>
+<body>
+    <div id="movingBlock"></div>
+
+    <script>
+        const movingBlock = document.getElementById('movingBlock');
+
+        document.addEventListener('click', (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            movingBlock.style.left = `${x - 50}px`;  // Учитываем половину ширины блока
+            movingBlock.style.top = `${y - 50}px`;   // Учитываем половину высоты блока
+        });
+    </script>
+</body>
+</html>

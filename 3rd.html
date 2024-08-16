@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .block {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        #block1 { background-color: blue; }
+        #block2 { background-color: green; }
+        #block3 { background-color: red; }
+    </style>
+    <title>Задание 3</title>
+</head>
+<body>
+    <div id="block1" class="block" style="top: 50px; left: 50px;"></div>
+    <div id="block2" class="block" style="top: 200px; left: 50px;"></div>
+    <div id="block3" class="block" style="top: 350px; left: 50px;"></div>
+
+    <script>
+        const block1 = document.getElementById('block1');
+        const block2 = document.getElementById('block2');
+        const block3 = document.getElementById('block3');
+
+        document.addEventListener('mousedown', (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            if (event.button === 0) {
+                block1.style.left = `${x - 50}px`;
+                block1.style.top = `${y - 50}px`;
+            } else if (event.button === 1) {
+                block2.style.left = `${x - 50}px`;
+                block2.style.top = `${y - 50}px`;
+            } else if (event.button === 2) {
+                block3.style.left = `${x - 50}px`;
+                block3.style.top = `${y - 50}px`;
+            }
+        });
+
+        // Отключаем появление контекстного меню при нажатии правой кнопкой мыши
+        document.addEventListener('contextmenu', (event) => event.preventDefault());
+    </script>
+</body>
+</html>
